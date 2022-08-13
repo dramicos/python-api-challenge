@@ -1,36 +1,44 @@
-# python-api-challenge
+# A Vacation Spot Finder
+
+### python-api-challenge
 Repository for HW6
+by: Arnold Schultz
 
-A two part challenge to "create a Python script to visualize the weather of 500+ cities of varying distance from the equator."  Tasks include creating scatter plots of the following relationships:
 
-PART 1:  WeatherPy
 
-* Temperature (F) vs. Latitude
-* Humidity (%) vs. Latitude
-* Cloudiness (%) vs. Latitude
-* Wind Speed (mph) vs. Latitude
+## PART 1:  WeatherPy
 
-The next task:
+This is a Python script to visualize the weather of 500+ completely random cities.  Once collected I obtain the weather data for these cities and create scatter plots to look at the following relationships:
 
-Compute a linear regression for each of the following:
+    - Temperature (F) vs. Latitude
+    - Humidity (%) vs. Latitude
+    - Cloudiness (%) vs. Latitude
+    - Wind Speed (mph) vs. Latitude
 
-* Northern Hemisphere - Temperature (F) vs. Latitude
-* Southern Hemisphere - Temperature (F) vs. Latitude
-* Northern Hemisphere - Humidity (%) vs. Latitude
-* Southern Hemisphere - Humidity (%) vs. Latitude
-* Northern Hemisphere - Cloudiness (%) vs. Latitude
-* Southern Hemisphere - Cloudiness (%) vs. Latitude
-* Northern Hemisphere - Wind Speed (mph) vs. Latitude
-* Southern Hemisphere - Wind Speed (mph) vs. Latitude
+With that information one can then do a linear regression to see the behavior of the weather parameters based on distance from the equator.
 
-Must have 500 RANDOM unique cities
-print a log of each city that is processed
-Save results to a csv file and plots to png images
+We can split the linear regressions into each hemisphere:
 
-PART 2:  VacationPy
+    - Northern Hemisphere - Temperature (F) vs. Latitude
+    - Southern Hemisphere - Temperature (F) vs. Latitude
+    - Northern Hemisphere - Humidity (%) vs. Latitude
+    - Southern Hemisphere - Humidity (%) vs. Latitude
+    - Northern Hemisphere - Cloudiness (%) vs. Latitude
+    - Southern Hemisphere - Cloudiness (%) vs. Latitude
+    - Northern Hemisphere - Wind Speed (mph) vs. Latitude
+    - Southern Hemisphere - Wind Speed (mph) vs. Latitude
 
-Create a heat map for every city in part 1 over humidity
-Narrow a city search based off of three weather conditions dropping cities that don't meet them
+A log of each city that is processed is printed to the screen and the results are saved to a csv file.
+The plots are saved as png image files.
 
-Use google API to find first hotel within 5 km of coordinates
-Plot hotels on top of heatmap and have a PIN Label with Hotel Name, City and Country
+## PART 2:  VacationPy
+
+In this notebook I create a heat map for every city in part 1 over humidity. I then norrow my selection of cities to only those that meet the following conditions:
+
+    - Maximum Temperature between 80 and 90 degrees fahrenheit
+    - Both humidity and cloudiness less than 50%
+    - Wind speed less than 10 mph
+    
+All cities that don't meet them are dropped
+
+Then I use google API to find first hotel within 5 km of coordinates and plot the hotels on top of heatmap and have a PIN Label with Hotel Name, City and Country
